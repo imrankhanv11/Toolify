@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Reverser</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="../script.js"></script>
+  <style>
+    /* Styling for the Word Reverser */
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    #reverseContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    textarea {
+      width: 50%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea:focus {
+      border-color: #007bff;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 5px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button.reverse {
+      background-color: #28a745;
+      color: white;
+    }
+
+    button.reverse:hover {
+      background-color: #218838;
+    }
+
+    button.back-button {
+      background-color: #007bff;
+      color: white;
+    }
+
+    button.back-button:hover {
+      background-color: #0056b3;
+    }
+
+    #reverseResult {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">T<i class="fa-solid fa-gear"></i><i class="fa-solid fa-gear"></i>LIFY</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <p id="top-main">WebTools</p>
+    <p id="main-topic">Useful Tools & Utilities to make life easier...</p>
+
+    <h2><i class="fas fa-reply"></i> Word Reverser</h2>
+
+    <div id="reverseContainer">
+      <textarea id="reverseInput" placeholder="Enter text here"></textarea>
+      <div class="button-container">
+        <button class="reverse" onclick="reverseWords()">Reverse Words</button>
+        <button class="back-button" onclick="location.href='../index.html'">Back</button>
+      </div>
+      <p id="reverseResult"></p>
+    </div>
+  </section>
+  <section id="home">
+    <h2>Similar Tools</h2><br>
+    <div class="toolkit-grid">
+
+      <a href="palindromeChecker.html" class="toolkit-item" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-eye"></i>
+        <h2>Palindrome Checker</h2>
+        <p>Check if a word is a palindrome.</p>
+      </a>
+
+      <a href="percentagecal.html" class="toolkit-item" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-percent"></i>
+        <h2>Percentage Calculator</h2>
+        <p>Calculator for percentage.</p>
+      </a>
+
+      <a href="emical.html" class="toolkit-item" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-money-bill-wave"></i>
+        <h2>EMI Calculator</h2>
+        <p>Calculator for EMI loan.</p>
+      </a>
+
+      <a href="wordCount.html" class="toolkit-item" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-font"></i>
+        <h2>Word and Letter Counter</h2>
+        <p>Count the number of words and letters in your text.</p>
+      </a>
+
+
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" style="padding: 50px; background-color: #b1adad;">
+    <h2>About Toolify</h2>
+    <p>
+      Toolify is a simple yet powerful collection of tools designed to make your life easier. Whether you need to
+      generate random numbers, calculate your BMI, or manage your tasks, Toolfobia has got you covered!
+    </p>
+
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" style="padding: 50px; background-color: #f0f0f0;">
+    <h2>User Testimonials</h2>
+    <div class="testimonial">
+      <p>"This toolkit made my daily tasks so much simpler!" - Tony stark</p>
+    </div>
+    <div class="testimonial">
+      <p>"I love how easy it is to use the tools on Toolify!" - Peter Parker</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" style="padding: 50px; background-color: #b1adad;">
+    <h2>Features</h2>
+    <ul class="features-list">
+      <li>
+        <i class="fas fa-check-circle"></i>
+        <span>Quick and easy to use</span>
+      </li>
+      <li>
+        <i class="fas fa-check-circle"></i>
+        <span>Completely free</span>
+      </li>
+      <li>
+        <i class="fas fa-check-circle"></i>
+        <span>Multiple tools in one place</span>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- Contact Form Section -->
+  <section id="contact" style="padding: 50px; background-color: #f0f0f0;">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" style="padding: 50px; background-color: #b1adad;">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-item">
+      <h3>How do I use the To-Do List?</h3>
+      <p>You can add tasks by entering them into the input box and pressing "Add". You can also delete tasks by clicking
+        the delete button next to each task.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is Toolfobia free to use?</h3>
+      <p>Yes, all tools in Toolify are completely free to use!</p>
+    </div>
+  </section>
+
+  <!-- Upcoming Features Section -->
+  <section id="upcoming">
+    <h2>Upcoming Features</h2>
+    <div class="upcoming-features-container">
+      <div class="feature-item">
+        <i class="fas fa-wrench"></i>
+        <h3>Expense Tracker</h3>
+        <p>Keep track of your daily expenses easily.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-wrench"></i>
+        <h3>Unit Converter</h3>
+        <p>Convert units effortlessly between different systems.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-wrench"></i>
+        <h3>Stopwatch</h3>
+        <p>Measure time accurately with our simple stopwatch.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section -->
+  <footer style="padding: 20px; background-color: #333; color: white; text-align: center;">
+    <p>© 2024 Toolify. All Rights Reserved.</p>
+    <p><a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms of Service</a></p>
+  </footer>
+
+</body>
+
+</html>
