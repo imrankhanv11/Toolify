@@ -22,7 +22,7 @@ Fast Performance: Quick load times and smooth user experience.
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/toolify.git
+git clone https://github.com/imrankhanv11/toolify.git
 Open index.html in your browser to start using the tools!
 🌐 Demo
 Check out the live demo here.
